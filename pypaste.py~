@@ -37,6 +37,7 @@ def pypaste_readconfig():
 def pypaste_paste(filename):
     pypaste_readconfig()            # read the id of pastebin in use
     ppi.chunk = ""
+    ppi.filename = filename
     
     try:
         filehandle = open (filename,"r")
@@ -52,6 +53,10 @@ def pypaste_paste(filename):
         return 
     
     url,values = ppi.prepare_post()
+    
+    if (url==""):
+        print "Failed to fetch your pastebin's url."
+        print "Try again after deleting/editing your pypaste.conf"
       
     data = urllib.urlencode(values)
     

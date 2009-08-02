@@ -38,4 +38,6 @@ def prepare_post():
     if config=='3':
         # dpaste.com
         return dpaste_com.prepare (filename,filename.split(".")[-1].lower(),user,chunk)
-    return "",
+    
+    # otherwise
+    return "",{'foo':'null'}

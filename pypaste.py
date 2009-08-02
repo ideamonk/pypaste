@@ -53,6 +53,11 @@ def pypaste_paste(filename):
         return 
     
     url,values = ppi.prepare_post()
+    
+    if (url==""):
+        print "Failed to fetch your pastebin's url."
+        print "Try again after deleting/editing your pypaste.conf"
+        return
       
     data = urllib.urlencode(values)
     
