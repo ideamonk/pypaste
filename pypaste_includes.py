@@ -10,7 +10,7 @@ import os
 import pwd
 import string
 
-sys.path.append ("./pypaste_modules")   # to allow further imports
+sys.path.append ("./modules")   # to allow further imports
 import paste_ubuntu_com
 import paste_pocoo_org
 import dpaste_com
