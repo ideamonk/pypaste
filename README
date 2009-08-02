@@ -29,7 +29,7 @@ file extensions and highlighting supported by the service.
 To hack and add more support, you should have a look at
 
     ./pypaste_includes.py
-    ./pypaste_modules/*                 --> these are service specific modules
+    ./modules/*                 --> these are service specific modules
     
 
 
