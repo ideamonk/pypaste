@@ -9,7 +9,7 @@
 # published by the Free Software Foundation.
 # ======================================================================
 
-# the above header is based on G0SUB's Python based Gmail checker
+# header as seen in G0SUB's Gmail script
 
 import urllib                       # for driving the nuts of the net
 import urllib2                      # a new vehicle to ride :)
@@ -19,6 +19,30 @@ import pypaste_includes as ppi
 
 version = "1.0"
 
+def pypaste_config():
+    ''' helps the user select a nice pastebin '''
+    ppi.show_list()
+    
+    print "New choice :"
+    
+    try:
+        new_config = int(raw_input())
+    except:
+        print "invalid choice!\n"
+        pypaste_config()
+        return
+    
+    if (new_config > ppi.MAX or new_config <= 0):
+        print "invalid choice!\n"
+        pypaste_config()
+        return
+    
+    # wooh! everything is fine now, so lets write the new config
+    confhandle = open ("pypaste.conf","w")
+    confhandle.write (str(new_config))
+    confhandle.close()
+    
+    
 def pypaste_readconfig():
     ''' reads out the id for pastebin in use '''
     
@@ -78,11 +102,7 @@ def pypaste_paste(filename):
 def parse_args():
     ''' Do what the user wants you do '''    
     if (sys.argv[1] == "--config"):
-        pypaste_config()
-        
-    elif (sys.argv[1] == "--test"):
-        pypaste_test()
-            
+        pypaste_config()          
     else:
         # treat it as file to be pasted
         pypaste_paste( sys.argv[1] )    
@@ -91,23 +111,22 @@ def parse_args():
 def show_help():
     ''' Shows the usage of pypaste '''
     
-    print '''
-pypaste 1.0                      author: Abhishek Mishra <ideamonk at gmail.com>
+    print '''pypaste 1.0                      author: Abhishek Mishra <ideamonk at gmail.com>
 
 usage: pypaste OPTION [file-to-paste]
 
-OPTIPONS
---------
     --config
         select and configure a pastebin provider from supported list.
-        
-    --install
-        install pypaste.py into your system'''
-        
+    
+    --use pastebin_id
+        uses a particular available pastebin provider from the list:'''
+    ppi.show_list()
+    
 
 if __name__ == "__main__":
     if (len(sys.argv) == 1):
         # No arguments supplied! -> show help
+        pypaste_readconfig()            # read the id of pastebin in use
         show_help()
     else:
         parse_args()

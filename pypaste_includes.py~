@@ -22,17 +22,21 @@ user = pwd.getpwuid(os.getuid()).pw_name
 
 # configured pastebin service id -
 config = '1'                        # by default first pastebin is used            
+MAX = 4
 
 # uncomment the following if you've a nickname of your choice
 #user = 'Your nickname'
 
 def show_list():
     ''' prints out a list of availabe pastebins with current version '''
+    global config
+    
     print '''
             1   http://paste.ubuntu.com
             2   http://paste.pocoo.org
             3   http://dpaste.com
             4   http://nopaste.com
+            
         currently using %s
             ''' % (config)
             
@@ -54,7 +58,7 @@ def prepare_post():
     elif config=='4':
         # nopaste.com
         return nopaste_com.prepare (filename,filename.split(".")[-1].lower(),user,chunk)
-    else
+    else:
         return "",{'foo':'null'}
     
     
