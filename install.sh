@@ -32,4 +32,4 @@ echo "export PATH" >> ~/.bashrc
 export PATH=$PATH:/home/$USER/.pypaste
 
 echo "Installation Complete!"
-echo "do pypaste for info :)"
+echo "do pypaste for info :) in any terminal other than this."
