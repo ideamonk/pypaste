@@ -89,7 +89,8 @@ def parse_args():
 
     
 def show_help():
-    ''' Shows the usage of pypaste.'''
+    ''' Shows the usage of pypaste '''
+    
     print '''
 pypaste 1.0                      author: Abhishek Mishra <ideamonk at gmail.com>
 
@@ -103,9 +104,11 @@ OPTIPONS
     --install
         install pypaste.py into your system
     
-    --test
-        test all available services'''
-        
+    --use pastebin_id
+        uses a particular available pastebin provider from the list:'''
+    
+    ppi.showlist()
+    
 
 if __name__ == "__main__":
     if (len(sys.argv) == 1):

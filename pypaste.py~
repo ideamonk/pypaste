@@ -57,6 +57,7 @@ def pypaste_paste(filename):
     if (url==""):
         print "Failed to fetch your pastebin's url."
         print "Try again after deleting/editing your pypaste.conf"
+        return
       
     data = urllib.urlencode(values)
     
@@ -88,7 +89,8 @@ def parse_args():
 
     
 def show_help():
-    ''' Shows the usage of pypaste.'''
+    ''' Shows the usage of pypaste '''
+    
     print '''
 pypaste 1.0                      author: Abhishek Mishra <ideamonk at gmail.com>
 
@@ -100,10 +102,7 @@ OPTIPONS
         select and configure a pastebin provider from supported list.
         
     --install
-        install pypaste.py into your system
-    
-    --test
-        test all available services'''
+        install pypaste.py into your system'''
         
 
 if __name__ == "__main__":
