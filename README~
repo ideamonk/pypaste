@@ -9,7 +9,7 @@
 
 
 README
-======
+------
 
 pypaste.py is a python script that helps you in pasting your code on pastebin
 websites without having to open a new browser window and browse for your file
@@ -34,7 +34,7 @@ To hack and add more support, you should have a look at
 
 
 INSTALL
-=======
+-------
 
 Run the install.sh script in project's root.
 after that you should be able to run it easily from anywhere
@@ -49,9 +49,8 @@ $ sudo sh ./install.sh
 * You need to be a superuser to be able to install
 
 
-
 USAGE
-=====
+-----
 
 usage: pypaste OPTION [file-to-paste]
 

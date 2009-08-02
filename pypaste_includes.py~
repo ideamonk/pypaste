@@ -22,7 +22,7 @@ user = pwd.getpwuid(os.getuid()).pw_name
 
 # configured pastebin service id -
 config = '1'                        # by default first pastebin is used            
-MAX = 4
+MAX = 4                             # max num of services configured
 
 # uncomment the following if you've a nickname of your choice
 #user = 'Your nickname'
@@ -51,7 +51,7 @@ def prepare_post():
         return paste_ubuntu_com.prepare(filename.split(".")[-1].lower(),user,chunk)
     elif config=='2':
         # paste.pocoo.org
-        return paste_pocoo_com.prepare(filename.split(".")[-1].lower(),user,chunk)
+        return paste_pocoo_org.prepare(filename.split(".")[-1].lower(),user,chunk)
     elif config=='3':
         # dpaste.com
         return dpaste_com.prepare (filename,filename.split(".")[-1].lower(),user,chunk)

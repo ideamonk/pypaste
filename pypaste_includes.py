@@ -10,7 +10,7 @@ import os
 import pwd
 import string
 
-sys.path.append ("./modules")   # to allow further imports
+sys.path.append ("./pypaste_modules")   # to allow further imports
 import paste_ubuntu_com
 import paste_pocoo_org
 import dpaste_com
@@ -51,7 +51,7 @@ def prepare_post():
         return paste_ubuntu_com.prepare(filename.split(".")[-1].lower(),user,chunk)
     elif config=='2':
         # paste.pocoo.org
-        return paste_pocoo_com.prepare(filename.split(".")[-1].lower(),user,chunk)
+        return paste_pocoo_org.prepare(filename.split(".")[-1].lower(),user,chunk)
     elif config=='3':
         # dpaste.com
         return dpaste_com.prepare (filename,filename.split(".")[-1].lower(),user,chunk)
