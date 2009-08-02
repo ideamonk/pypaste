@@ -22,6 +22,7 @@ http://paste.pocoo.org/show/132171/
 $
 
 Where "http://paste.pocoo.org/show/132171/" is an example output.
+Which is automatically formatted for HTML syntax by PyPaste!
 
 You'll notice that pypaste tries to do automatic syntax highlighting based on 
 file extensions and highlighting supported by the service.
