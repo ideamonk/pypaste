@@ -32,7 +32,7 @@ def get_syntax(ext):
         return 'Bash'
         # that's all on dpaste folks
     else:
-        return 'text'
+        return ''
 
 def prepare(filename,file_ext,user,chunk):
     url = "http://dpaste.com"

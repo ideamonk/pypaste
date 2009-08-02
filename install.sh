@@ -17,6 +17,7 @@ echo "Copying files ..."
 cp -R ./* ~/.pypaste/
 
 mv ~/.pypaste/pypaste.py ~/.pypaste/pypaste
+chmod +x ~/.pypaste/pypaste
 
 # removes temporary swap/backup files
 echo "Removing temporary files from install location"

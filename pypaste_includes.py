@@ -10,11 +10,11 @@ import os
 import pwd
 import string
 
-sys.path.append ("./modules")   # to allow further imports
-import paste_ubuntu_com
-import paste_pocoo_org
-import dpaste_com
-import nopaste_com
+#sys.path.append ("modules")   # to allow further imports
+import modules.paste_ubuntu_com as paste_ubuntu_com
+import modules.paste_pocoo_org  as paste_pocoo_org
+import modules.dpaste_com       as dpaste_com
+import modules.nopaste_com      as nopaste_com
 
 chunk = ""
 filename = ""

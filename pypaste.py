@@ -18,6 +18,7 @@ import sys                          # command line args and other stuff
 import pypaste_includes as ppi
 
 version = "1.0"
+configfile = "/home/%s/.pypaste/pypaste.conf" % (ppi.user)
 
 def pypaste_config():
     ''' helps the user select a nice pastebin '''
@@ -40,7 +41,7 @@ def pypaste_config():
         return
     
     # wooh! everything is fine now, so lets write the new config
-    confhandle = open ("pypaste.conf","w")
+    confhandle = open (configfile,"w")
     confhandle.write (str(new_config))
     confhandle.close()
     
@@ -49,14 +50,14 @@ def pypaste_readconfig():
     ''' reads out the id for pastebin in use '''
     
     try:
-        confhandler = open ("pypaste.conf","r")
+        confhandler = open (configfile,"r")
         ppi.config = confhandler.read()
         confhandler.close()
     except:
-        print "Warning: Couldn't access ./pypaste.conf to read configuration from."
+        print "Warning: Couldn't access ~/.pypaste/pypaste.conf to read configuration from."
         print "Warning: Creating default pypaste.conf ..."
         
-        confhandler = open ("pypaste.conf","w")
+        confhandler = open (configfile,"w")
         confhandler.write ("1")
         confhandler.close()
 
@@ -82,7 +83,7 @@ def pypaste_paste(filename):
     
     if (url==""):
         print "Failed to fetch your pastebin's url."
-        print "Try again after deleting/editing your pypaste.conf"
+        print "Try again after deleting/editing your ~/.pypaste/pypaste.conf"
         return
       
     data = urllib.urlencode(values)
@@ -98,6 +99,7 @@ def pypaste_paste(filename):
         print "Specify version %s and pastebin id %s in the mail." % (version,ppi.config)
         return
     
+    #print response.read()              # for debugging
     print response.url
     
     
