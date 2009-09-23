@@ -1,7 +1,7 @@
 ## paste.ubuntu.com module
 # Sun Aug  2 02:51:56 IST 2009            Abhishek Misha <ideamonk at gmail.com>
 
-# If I missed you favourite file extension/syntact, you can simply view the
+# If I missed your favourite file extension/syntact, you can simply view the
 # source of http://paste.ubuntu.com an look for 
 '''
 <option value="text">Plain Text</option>
