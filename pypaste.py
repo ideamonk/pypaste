@@ -9,8 +9,6 @@
 # published by the Free Software Foundation.
 # ======================================================================
 
-# header as seen in G0SUB's Gmail script
-
 import urllib                       # for driving the nuts of the net
 import urllib2                      # a new vehicle to ride :)
 import sys                          # command line args and other stuff
