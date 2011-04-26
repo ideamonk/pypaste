@@ -25,8 +25,8 @@ rm -f ~/.pypaste/install.*
 
 # effective on a new bash
 echo "Adding ~/.pypaste to your path (in ~/.bashrc)"
-echo "PATH=$PATH:/home/$USER/.pypaste" >> ~/.bashrc
-echo "export PATH" >> ~/.bashrc
+echo "PATH=\$PATH:/home/$USER/.pypaste" >> ~/.bashrc
+echo "export \$PATH" >> ~/.bashrc
 
 # for immediate use
 export PATH=$PATH:/home/$USER/.pypaste
